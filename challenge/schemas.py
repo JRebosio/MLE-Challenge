@@ -38,3 +38,11 @@ class Flight(BaseModel):
     OPERA: OperatorOption
     TIPOVUELO: FlightTypeOption
     MES: int = Field(description="Number of month", ge=1, le=12)
+
+
+class Data(BaseModel):
+    flights: list[Flight]
+
+
+class FlightsPrediction(BaseModel):
+    predict: list[int]
