@@ -1,0 +1,9 @@
+.env/
+__MACOSX/
+
+.vscode/*
+
+*.pyc
+
+.coverage
+reports/*
