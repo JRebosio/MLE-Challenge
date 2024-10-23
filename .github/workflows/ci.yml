@@ -33,3 +33,14 @@ jobs:
 
       - name: Run api tests
         run: source .venv/bin/activate && make api-test
+
+      - name: Run flake8 and black
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: false
+
+          flake8: true
+          flake8_args: --max-line-length=100 --verbose --exclude **\.venv/*
+
+          black: true
+          black_args: --exclude '\.venv\/*'
