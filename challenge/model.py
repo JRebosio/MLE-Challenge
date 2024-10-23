@@ -7,11 +7,8 @@ from challenge.utils import get_features, get_target
 
 
 class DelayModel:
-
     def __init__(self):
-        self._model = joblib.load(
-            "xgb_model.joblib"
-        )  # Model should be saved in this attribute.
+        self._model = joblib.load("xgb_model.joblib")  # Model should be saved in this attribute.
 
     def preprocess(
         self, data: pd.DataFrame, target_column: str = None
