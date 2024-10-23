@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main
+      - develop
+      - 'feat/**'
 env:
   PYTHON_VERSION: 3.9.13
 
