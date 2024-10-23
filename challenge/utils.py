@@ -36,14 +36,11 @@ def get_target(data: pd.DataFrame, target_column: str) -> Union[pd.DataFrame, No
 
 
 def get_features(data: pd.DataFrame) -> pd.DataFrame:
-
     operator_categories = [operator.value for operator in OperatorOption]
     flight_type_categories = [flight_type.value for flight_type in FlightTypeOption]
 
     data["OPERA"] = pd.Categorical(data["OPERA"], categories=operator_categories)
-    data["TIPOVUELO"] = pd.Categorical(
-        data["TIPOVUELO"], categories=flight_type_categories
-    )
+    data["TIPOVUELO"] = pd.Categorical(data["TIPOVUELO"], categories=flight_type_categories)
     data["MES"] = pd.Categorical(data["MES"], categories=list(range(1, 13)))
 
     features = pd.concat(

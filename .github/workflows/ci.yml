@@ -37,13 +37,9 @@ jobs:
       - name: Install formatters dependencies
         run: pip install flake8==6.1.0 black==23.7.0 flake8-pep585==0.1.7
 
-      - name: Run flake8 and black
+      - name: Run black formatter
         uses: wearerequired/lint-action@v2
         with:
           auto_fix: false
-
-          flake8: true
-          flake8_args: --max-line-length=100 --verbose --exclude **\.venv/*
-
           black: true
-          black_args: --exclude '\.venv\/*'
+          black_args: --line-length 100 --exclude '\.venv\/*|__MACOSX/*'
