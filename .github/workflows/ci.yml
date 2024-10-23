@@ -35,7 +35,7 @@ jobs:
         run: source .venv/bin/activate && make api-test
 
       - name: Install formatters dependencies
-        run: pip install flake8==6.1.0 black==23.7.0 flake8-pep585==0.1.7
+        run: pip install black==23.7.0
 
       - name: Run black formatter
         uses: wearerequired/lint-action@v2
