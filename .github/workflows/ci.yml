@@ -34,6 +34,9 @@ jobs:
       - name: Run api tests
         run: source .venv/bin/activate && make api-test
 
+      - name: Install formatters dependencies
+        run: pip install flake8==6.1.0 black==23.7.0 flake8-pep585==0.1.7
+
       - name: Run flake8 and black
         uses: wearerequired/lint-action@v2
         with:
