@@ -19,3 +19,68 @@ I chose **AWS ECR, ECS, and Fargate** for deploying my API because they simplify
 ## Handling of Validation Errors in FastAPI
 
 I implemented a custom exception handler for **RequestValidationError** to return a **400 Bad Request** status code instead of the default **422 Unprocessable Entity**, which FastAPI typically uses for validation errors. This was required to meet specific **API design requirements**, where the client expects validation errors to be indicated with a 400 status code.
+
+## Api Documentation
+The link to the API documentation is as follows: 
+
+http://mlb-80-274378231.us-east-2.elb.amazonaws.com/docs
+
+## Setup
+
+- [Visual Studio Code](https://code.visualstudio.com/Download)
+- Python 3.9.13
+
+VSCode Extension:
+
+- Black
+
+
+## Init repo
+
+Create virtual environment
+```bash
+python3 -m venv .venv
+```
+
+To activate virtual environment
+```bash
+source .venv/bin/activate
+```
+
+To install dependencies
+```bash
+pip install -r requirements.txt
+pip install -r requirements-test.txt
+pip install -r requirements-dev.txt
+```
+
+## Simulations
+
+To simulate server locally, run the fastapi server with:
+
+```shell
+uvicorn challenge.api:app --host "0.0.0.0"
+```
+
+
+### Stress testing
+
+You can simulate multiple clients with:
+```shell
+make stress-test
+```
+
+
+## Test execution
+
+You can run model tests with the following command
+
+```shell
+make model-test
+```
+
+You can run api tests with the following command
+
+```shell
+make api-test
+```
